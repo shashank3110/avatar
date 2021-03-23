@@ -3,15 +3,11 @@ from .models import Project
 # Create your views here.
 
 def portfolio(request):
+    # get all project objects from Project Model
     projects=Project.objects.all()
-    # colors=['bisque','lightpink','lightblue','ivory','lightgreen','lightyellow']'#284D73' '#0C4276
-    colors=['#0E2B47' for _ in range(len(projects))]
-    # colors=['#12232e','#164a41','#3f3f3f','#ff8080','#cc33ff','#ffcc66']'#00182F' 
-    # colors='blue'
+    # color scheme for the project cards
+    colors=['#0E2B47' for _ in range(len(projects))] 
     projects=list(zip(projects,colors))
-    context={'projects':projects,
-            #  'colors':colors
-    
-    }
+    context={'projects':projects}
 
     return render(request,'index.html',context,status=200)

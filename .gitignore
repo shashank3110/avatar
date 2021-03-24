@@ -1,2 +1,6 @@
 *.pyc
 *db.sqlite3
+*Procfile
+*runtime.txt
+*app.json
+*staticfiles/
